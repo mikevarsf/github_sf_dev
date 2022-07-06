@@ -14,6 +14,7 @@ export default class TestEmpApi extends LightningElement {
     isSubscribeDisabled = false;
     isUnsubscribeDisabled = !this.isSubscribeDisabled;
     @track topicMessages = '';
+    @track error = '';
 
     subscription = {};
 
@@ -66,9 +67,9 @@ export default class TestEmpApi extends LightningElement {
 
     registerErrorListener() {
         // Invoke onError empApi method
-        onError((error) => {
-            console.log('Received error from server: ', JSON.stringify(error));
+        onError((error) => {            
             // Error contains the server-side error
+            this.error = JSON.stringify(error);                        
         });
     }
 }

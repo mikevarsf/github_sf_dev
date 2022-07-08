@@ -1,0 +1,1 @@
+AccountManagement.createAccount('Test Account', 'Test Type');
